@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error {{ errno }}
+{% endblock title %}
+
+{% block content %}
+<h1>
+    Aplogies. You have encountered an Error {{ errno }}
+</h1>
+<p>Maybe try fixing the following: </p>
+<p>{{ errmsg }}</p>
+{% endblock %}

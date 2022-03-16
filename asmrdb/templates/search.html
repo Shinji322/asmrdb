@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock title %}
+
+{% block content %}
+<!-- This file would have received the output of the database search -->
+    <form class="form-inline my-2 my-lg-0" action="{{ url_for('results') }}">
+        <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search database" name="search" required autofocus >
+        <button id="toggle_advanced_search" class="btn" type="button">Advanced</button>
+
+        <!-- Data will be added in js/search.js -->  
+        <div id="advanced_info">
+        </div>
+
+        <button class="btn btn-primary mt-2" type="submit">Submit Query</button>
+    </form>
+
+    <!-- Data will be added in js/search.js -->  
+    <div id="match-list"></div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock scripts %}

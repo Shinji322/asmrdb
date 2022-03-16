@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Info
+{% endblock title %}
+
+
+{% block content %}
+<div id="add_info" class="btn">
+    Add info.json to database
+    <form method="post">
+        <div class="form-element">
+            <label for="info_path">Path to info.json: </label>
+            <input id="info_path" type="text" name="info_path" placeholder="e.g. ~/archive/asmr/Rain Noises Channel 5000/.info.json">
+        </div>
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Update Database</button>
+        </div>
+    </form>
+</div>
+<div id="add_info" class="btn">
+    Add info manually to database
+    <form method="post">
+        {% for opt in add_options %}
+            <div class="form-element">
+                <label for="{{ opt }}">{{ opt }}: </label>
+                <input id="{{ opt }}" type="text" name="{{ opt }}" required>
+            </div>
+        {% endfor %}
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Update Database</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+

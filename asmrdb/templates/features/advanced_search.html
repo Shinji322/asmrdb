@@ -1,0 +1,29 @@
+<!-- If you're working with thsi file, make sure to repaste it back into js/search.js -->
+<div id="advanced_search">
+  <div id="search_text" class="justify-content-center">
+    <!-- add tags -->
+    <p class="justify-content-center">With Tags:</p>
+    <input class="justify-content-center" type="text" name="plus_tags" placeholder="+Tags">
+    <!-- minus tags -->
+    <p class="justify-content-center">Without tags:</p>
+    <input class="justify-content-center" type="text" name="min_tags" placeholder="-Tags">
+  </div>
+  <div id="search_sort">
+    <!-- sort option -->
+    <p>Sort option</p>
+    <select id="dropdown" name="sort_option"> 
+      <option value="fav" selected>Closest match</option>
+      <option value="fav">Favorites</option>
+      <option value="view">View count</option>
+      <option value="p_view">Personal view count</option>
+      <option value="likes">Like count</option>
+    </select>
+  </div>
+  <div id="search_classes">
+    <!-- use jinja loop here -->
+    <label class="checkbox inline">
+      <input id="template" name="template[]" type="checkbox" value="template"> 
+      template
+    </label>  
+  </div>
+</div>

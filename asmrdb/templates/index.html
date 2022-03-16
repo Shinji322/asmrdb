@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form class="form-inline my-2 my-lg-0 mb-3" action="{{ url_for('results') }}">
+        <input id="search" class="form-control mr-sm-2" type="text" placeholder="Search database" name="search" required autofocus >
+    </form>
+    {% for result in queries %}
+        <div class="card mt-3">
+            {% if (result["img_path"] != None) %}
+                <img class="card-img-top" src={{ result["img_path"] }} alt="An image such as a thumbnail">
+            {% endif %}
+            <div class="card-body">
+                <div class="card-title">
+                    <h4 class="card_title">
+                        {{ result["title"] }}
+                    </h4>
+                </div>
+                <div class="card-title">
+                    <h5 class="card_tags">
+                        {{ result["tags"] }}
+                    </h5>
+                </div>
+                <p class="card-text">
+                    {{ result["description"] }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+.card {
+    margin: 2rem 0 2rem 0;
+}
+
+.card_title {
+    color: royalblue;
+}
+
+
+.card_tags {
+    color: hotpink;
+}
+    
+.card-text {
+    color: black;
+}

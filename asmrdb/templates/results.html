@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <link href="/static/css/card.css" rel="stylesheet">
+{% endblock head %}
+{% block title %}
+    Results
+{% endblock title %}
+
+
+{% block content %}
+    <!-- TODO make a div card for each result -->
+    {% for result in t_results %}
+    <!-- Results.title  -->
+        <div class="card">
+            {% if (result["img_path"] != None) %}
+                <img class="card-img-top" src={{ result["img_path"] }} alt="An image such as a thumbnail">
+            {% endif %}
+            <div class="card-body">
+                <div class="card-title">
+                    <h4 class="card_title">
+                        {{ result["title"] }}
+                    </h4>
+                </div>
+                <div class="card-title">
+                    <h5 class="card_tags">
+                        {{ result["tags"] }}
+                    </h5>
+                </div>
+                <p class="card-text">
+                    {{ result["description"] }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+    {% for result in d_results %}
+    <!-- Results.description -->
+        <div class="card">
+            {% if (result["img_path"] != None) %}
+                <img class="card-img-top" src={{ result["img_path"] }} alt="An image such as a thumbnail">
+            {% endif %}
+            <div class="card-body">
+                <div class="card-title">
+                    <h5 class="card_title">
+                        {{ result["title"] }}
+                    </h5>
+                </div>
+                <div class="card-title">
+                    <h6 class="card_tags">
+                        {{ result["tags"] }}
+                    </h6>
+                </div>
+                <p class="card-text">
+                    {{ result["description"] }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+    {% for result in results %}
+    <!-- Results.advanced -->
+        <div class="card">
+            {% if (result["img_path"] != None) %}
+                <img class="card-img-top" src={{ result["img_path"] }} alt="An image such as a thumbnail">
+            {% endif %}
+            <div class="card-body">
+                <div class="card-title">
+                    <h5 class="card_title">
+                        {{ result["title"] }}
+                    </h5>
+                </div>
+                <div class="card-title">
+                    <h6 class="card_tags">
+                        {{ result["tags"] }}
+                    </h6>
+                </div>
+                <p class="card-text">
+                    {{ result["description"] }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

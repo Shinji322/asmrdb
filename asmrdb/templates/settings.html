@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Settings
+{% endblock title %}
+
+{% block content %}
+    <form method="post">
+        <div class="form-group row">
+            <div class="form-group col-sm-4">
+                <label for="custom_theme">Theme</label>
+                <select name="custom_theme" id="custom_theme" class="form-control">
+                    {% for theme_s in themes %}
+                        <option>{{ theme_s }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label class="form-check-label" for="css_check">Custom CSS</label>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="css_check">
+                </div>
+            </div>
+            <div id="custom-css-path">
+                <label for="custom_css">Path to custom CSS</label>
+                <input disabled type="text" id="custom_css" name="custom_css" class="form-control" placeholder="~/.config/asmrdb/my.css">
+            </div>
+        </div>
+        <div class="col-auto my-1">
+            <button type="submit" class="btn btn-primary">Apply Changes</button>
+        </div>
+    </form>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+{% endblock scripts %}
